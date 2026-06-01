@@ -13,15 +13,13 @@ void slowprint(char text[])
 
 int main()
 {
-	//so we  type a string and it is read one word att a time as in lyric
 	char filename[100],buffer[100];
 	FILE *fptr;
 	int pr;
+
 	fgets(filename,100,stdin);
-	filename[strcspn(filename,"\n")] = '\0';  //tooo important of a line if yypu do not want a segmentation error
-	
-	//strcspn here gives the no of elements before newlinne characcter appears then replaces it with \0 as fgets also reads newline character
-	//strcspn returns bytes but herre its simplified one 
+	filename[strcspn(filename,"\n")] = '\0'; 
+
 
 	fptr = fopen(filename,"r");
 
@@ -35,7 +33,6 @@ int main()
 	fclose(fptr);
 
 	printf("\n");
-//	slowprint(buffer);
 	return 0;
 
 
