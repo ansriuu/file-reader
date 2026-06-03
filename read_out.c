@@ -13,10 +13,10 @@ void slowprint(char text[])
 
 int main()
 {
-	char filename[100],buffer[100];
+	char filename[100],buffer[200];
 	FILE *fptr;
 	int pr;
-
+	
 	fgets(filename,100,stdin);
 	filename[strcspn(filename,"\n")] = '\0'; 
 
@@ -25,7 +25,7 @@ int main()
 
 	if (fptr != NULL)
 	{
-	while (fgets(buffer,100,fptr))
+	while (fgets(buffer,200,fptr))
 		{	
 			slowprint(buffer);
 		}
@@ -33,7 +33,8 @@ int main()
 	fclose(fptr);
 
 	printf("\n");
-	return 0;
+	return 0
+
 
 
 }
